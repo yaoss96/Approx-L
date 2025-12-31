@@ -4,7 +4,7 @@
 
 **Approx-L** is an energy-efficient, nearly unbiased approximate floating-point divider designed for error-tolerant applications such as image processing, computer vision, and machine learning.
 
-This repository implements the architecture proposed in the paper **"Approx-L: Nearly Unbiased Approximate Floating-Point Divider with Multi-level Linearization"** (IEEE TVLSI 2025).
+This repository implements the architecture proposed in the paper **"Approx-L: Nearly Unbiased Approximate Floating-Point Divider with Multi-level Linearization"** .
 
 ### ✨ Key Features
 *   **IEEE 754 Compliant**: Supports Single-Precision (32-bit) floating-point format.
