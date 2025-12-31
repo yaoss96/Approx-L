@@ -22,16 +22,13 @@ This repository implements the architecture proposed in the paper **"Approx-L: N
 ```text
 Approx-L/
 ├── rtl/                    # Verilog Source Code
-│   ├── approx_l_div_fp32.v # Top-level module for Approx-L
-│   ├── mantissa_div.v      # Core approximate mantissa division logic
-│   ├── error_comp.v        # Multi-level linear error compensation module
-│   └── ...
+│   ├── approx_l.v # Top-level module for Approx-L
 ├── sim/                    # Simulation Files
-│   ├── tb_image_divider.v  # Testbench for image processing application
-│   └── tb_basic.v          # Basic functional verification testbench
+│   ├── fp32_tb.v  # Testbench for image processing application
 ├── image_test/             # Image Testing & Python Scripts
-│   ├── gen_hex.py          # Converts input images to Hex format for Verilog
-│   ├── reconstruct_img.py  # Reconstructs images from simulation output & calculates PSNR/SSIM
-│   ├── input_images/       # Source test images
-│   └── output_images/      # Resulting images from simulation
+│   ├── img_pre.py          # Converts input images to Hex format for Verilog
+│   ├── img_comp.py  # Reconstructs images from simulation output & calculates PSNR/SSIM
+│   ├── img.v       
+│   ├── image1.png        # Source test image1
+│   ├── image2.png       # Source test image2
 └── README.md
