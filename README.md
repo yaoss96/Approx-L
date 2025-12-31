@@ -1,9 +1,5 @@
 # Approx-L: Nearly Unbiased Approximate Floating-Point Divider with Multi-level Linearization
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Verilog](https://img.shields.io/badge/Language-Verilog-green)]()
-[![Python](https://img.shields.io/badge/Language-Python-yellow)]()
-
 ## 📖 Introduction
 
 **Approx-L** is an energy-efficient, nearly unbiased approximate floating-point divider designed for error-tolerant applications such as image processing, computer vision, and machine learning.
