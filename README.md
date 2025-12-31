@@ -1,38 +1,37 @@
-
 # Approx-L: Nearly Unbiased Approximate Floating-Point Divider with Multi-level Linearization
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Verilog](https://img.shields.io/badge/language-Verilog-green.svg)]()
-[![Python](https://img.shields.io/badge/language-Python-yellow.svg)]()
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Verilog](https://img.shields.io/badge/Language-Verilog-green)]()
+[![Python](https://img.shields.io/badge/Language-Python-yellow)]()
 
-## 📖 Introduction (简介)
+## 📖 Introduction
 
-**Approx-L** 是一个高能效、近乎无偏的近似浮点除法器（Approximate Floating-Point Divider），专为图像处理、计算机视觉和机器学习等容错应用设计。
+**Approx-L** is an energy-efficient, nearly unbiased approximate floating-point divider designed for error-tolerant applications such as image processing, computer vision, and machine learning.
 
-该项目实现了论文 **"Approx-L: Nearly Unbiased Approximate Floating-Point Divider with Multi-level Linearization"** (IEEE TVLSI 2025) 中提出的架构。
+This repository implements the architecture proposed in the paper **"Approx-L: Nearly Unbiased Approximate Floating-Point Divider with Multi-level Linearization"** (IEEE TVLSI 2025).
 
-### ✨ Key Features (主要特性)
-*   **IEEE 754 兼容**: 支持单精度（32-bit）浮点数格式。
-*   **近乎无偏 (Nearly Unbiased)**: 采用误差平衡的尾数除法算法，避免了传统对数近似方法的误差累积问题。
-*   **多级线性化补偿 (Multi-level Linearization)**: 提供可配置的精度等级（Level 1, 2, 3），通过简单的移位和加法操作实现高精度误差补偿。
-*   **硬件高效**: 相比精确除法器，**PDP (Power-Delay Product)** 降低高达 **65.6%**，且无需大型乘法器或巨大的查找表。
-*   **应用验证**: 在图像背景移除任务中，实现了与精确除法器几乎无法区分的视觉质量 (PSNR: 39.88 dB, SSIM: 0.985)。
+### ✨ Key Features
+*   **IEEE 754 Compliant**: Supports Single-Precision (32-bit) floating-point format.
+*   **Nearly Unbiased**: Introduces an error-balanced mantissa division algorithm that prevents the systematic error accumulation often found in traditional logarithmic approximation methods.
+*   **Multi-level Linearization**: Features a scalable compensation scheme (Level 1, 2, 3) using power-of-two coefficients, achieving high accuracy with simple shift and add logic.
+*   **Hardware Efficient**: Achieves up to **65.6% reduction in Power-Delay Product (PDP)** compared to an exact divider, without requiring large multipliers or massive lookup tables.
+*   **Application Verified**: Demonstrated on image background removal tasks, yielding visual quality nearly indistinguishable from exact division (PSNR: 39.88 dB, SSIM: 0.985).
 
-## 📂 Repository Structure (仓库结构)
+## 📂 Repository Structure
 
 ```text
 Approx-L/
-├── rtl/                    # Verilog 源代码
-│   ├── approx_l_div_fp32.v # Approx-L 顶层模块
-│   ├── mantissa_div.v      # 尾数近似除法核心
-│   ├── error_comp.v        # 线性误差补偿模块
+├── rtl/                    # Verilog Source Code
+│   ├── approx_l_div_fp32.v # Top-level module for Approx-L
+│   ├── mantissa_div.v      # Core approximate mantissa division logic
+│   ├── error_comp.v        # Multi-level linear error compensation module
 │   └── ...
-├── sim/                    # 仿真文件
-│   ├── tb_image_divider.v  # 图像处理测试激励 (Testbench)
-│   └── tb_basic.v          # 基础功能验证
-├── image_test/             # 图像测试与 Python 脚本
-│   ├── gen_hex.py          # 将图片转换为 Hex 文件供 Verilog 读取
-│   ├── reconstruct_img.py  # 将仿真结果 Hex 重建为图片并计算 PSNR/SSIM
-│   ├── input_images/       # 测试图片
-│   └── output_images/      # 结果图片
+├── sim/                    # Simulation Files
+│   ├── tb_image_divider.v  # Testbench for image processing application
+│   └── tb_basic.v          # Basic functional verification testbench
+├── image_test/             # Image Testing & Python Scripts
+│   ├── gen_hex.py          # Converts input images to Hex format for Verilog
+│   ├── reconstruct_img.py  # Reconstructs images from simulation output & calculates PSNR/SSIM
+│   ├── input_images/       # Source test images
+│   └── output_images/      # Resulting images from simulation
 └── README.md
