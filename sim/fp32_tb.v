@@ -33,11 +33,7 @@ module tb_approx_l;
     // =========================================================================
     // DUT (Device Under Test) Instantiation
     // =========================================================================
-//    approx_l_divider u_approx_l (
-//        .a(floating1_in),
-//        .b(floating2_in),
-//        .q(floating_division_out)
-//    );
+
     approx_l_div_fp32 u_div (
         .a(floating1_in),
         .b(floating2_in),
